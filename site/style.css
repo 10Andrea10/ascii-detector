@@ -1,0 +1,108 @@
+@charset "UTF-8";
+:root { color-scheme: light; --paper: #f6f5f0; --ink: #243f36; --muted: #68736d; --line: #dedfd5; --green: #285943; --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, textarea { font: inherit; }
+button, a, textarea, [tabindex] { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .4; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #b16a35; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.shell { width: min(100% - 80px, 1040px); margin: 0 auto; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; text-decoration: none; font-size: 19px; font-weight: 650; letter-spacing: -.6px; }
+.brand-icon { background: var(--ink); color: var(--paper); border-radius: 9px; padding: 8px 7px; margin-right: 11px; font: 19px var(--mono); letter-spacing: -2px; }
+.brand-period { color: #a2603c; }
+.local-note { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+.status-dot, .legend i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.intro { padding: 28px 0 24px; }
+.eyebrow { font: 10px var(--mono); font-weight: 600; letter-spacing: 2px; margin: 0 0 12px; color: #777d70; }
+h1 { font-size: clamp(28px, 4vw, 38px); line-height: 1.15; letter-spacing: -1.4px; font-weight: 550; margin: 0; }
+h1 > span { color: #7c8a70; }
+.lede { font-size: 14px; line-height: 1.65; color: var(--muted); margin: 12px 0 0; }
+.input-panel { background: #fffefb; border: 1px solid #d5d9ce; border-radius: 13px; overflow: hidden; box-shadow: 0 4px 18px #243f3604; }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; padding: 17px 22px 0; }
+.panel-heading label, h2 { font-size: 13px; font-weight: 600; }
+.section-number { display: inline-block; font: 11px var(--mono); color: #8b9286; margin-right: 12px; }
+.text-button { border: 0; color: var(--muted); background: transparent; padding: 7px 0 7px 15px; font-size: 12px; }
+.text-button span { margin-left: 6px; }
+textarea { display: block; width: calc(100% - 32px); margin: 8px 16px; padding: 14px 6px; min-height: 136px; resize: vertical; border: 0; border-radius: 5px; background: transparent; color: var(--ink); font: 21px/1.6 var(--mono); tab-size: 4; }
+textarea::placeholder { color: #a2a69c; font-size: 17px; }
+textarea:focus { outline: 2px solid #90a38c; outline-offset: 0; }
+.input-bottom { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; padding: 14px 22px; border-top: 1px solid #eeeee6; background: #fbfbf6; }
+.input-bottom > span { font-size: 11px; color: var(--muted); }
+.examples { display: flex; gap: 8px; flex-wrap: wrap; }
+.examples button { border: 1px solid #e1e3d9; border-radius: 5px; color: var(--ink); background: #fffefb; padding: 6px 9px; font: 12px var(--mono); }
+.examples button span { font: 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--muted); margin-left: 7px; }
+.examples button:hover, .secondary-button:hover { background: #eaf0e5; border-color: #c2cfbb; }
+.results { margin-top: 35px; }
+.results-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+h2 { margin: 0; }
+.count { background: #e9ece3; color: #61705b; padding: 5px 9px; border-radius: 5px; font: 11px var(--mono); white-space: nowrap; }
+.empty-state { text-align: center; border: 1px dashed #d8dbd0; border-radius: 11px; padding: 30px 16px; }
+.empty-symbol { position: relative; display: inline-block; font: 32px var(--mono); letter-spacing: -4px; color: #9ba68e; padding-right: 5px; }
+.empty-symbol > span { display: inline-block; color: #9f744f; font-size: 12px; letter-spacing: 0; position: absolute; top: -3px; right: -8px; }
+h3 { font-size: 14px; font-weight: 550; margin: 14px 0 8px; }
+.empty-state p { color: #828a7e; font-size: 12px; line-height: 1.7; margin: 0; }
+.load-status { font-size: 12px; color: var(--muted); }
+.legend { display: flex; gap: 22px; margin: 0 0 12px; font-size: 11px; color: var(--muted); }
+.legend i { margin-right: 6px; }
+.legend .unicode-dot { background: #bd8153; }
+.legend strong { margin-left: 4px; font-family: var(--mono); font-weight: 500; color: var(--ink); }
+.table-scroll { border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; background: #fffefb; }
+table { border-collapse: collapse; width: 100%; text-align: left; font-size: 12px; }
+th { font-size: 10px; letter-spacing: .5px; font-weight: 500; color: #6c7769; padding: 13px 17px; background: #eff1e9; white-space: nowrap; }
+.column-detail { font-size: 9px; letter-spacing: 0; opacity: .7; }
+td { border-top: 1px solid #eaece3; padding: 11px 17px; }
+th:first-child, td:first-child { width: 45px; color: #949b8c; font-family: var(--mono); font-size: 10px; }
+td:nth-child(2) { min-width: 112px; }
+td:nth-child(3), td:nth-child(4) { font-family: var(--mono); white-space: nowrap; }
+td:nth-child(3) { color: var(--green); }
+.glyph { display: inline-flex; min-width: 37px; min-height: 34px; align-items: center; justify-content: center; background: #f0f3eb; border: 1px solid #e3e9db; border-radius: 5px; font: 23px/1.2 var(--mono); white-space: pre; unicode-bidi: isolate; }
+.non-ascii .glyph { background: #faf0e5; border-color: #f0e1cf; color: #9b673e; }
+.glyph.hidden-glyph { padding: 0 6px; font-size: 9px; letter-spacing: .5px; }
+.character-name { font: 10px/1.6 var(--mono); letter-spacing: .2px; overflow-wrap: anywhere; min-width: 200px; }
+.kind { display: block; color: #a16c42; font: 10px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-top: 2px; }
+.not-ascii { color: #a4aa9f; }
+.results-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.results-bottom p { font: 10px var(--mono); color: var(--muted); }
+.secondary-button { border: 1px solid var(--line); border-radius: 5px; background: #fffefb; color: var(--ink); padding: 8px 12px; font-size: 12px; }
+.technical-note { color: #838a7f; font-size: 11px; line-height: 1.8; margin: 17px 0 0; }
+.privacy { display: flex; gap: 10px; align-items: center; margin: 33px 0 48px; color: #66765f; }
+.privacy svg { flex-shrink: 0; }
+.privacy p { font-size: 11px; margin: 0; }
+.privacy span { color: #838a7f; margin-left: 3px; }
+footer { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding: 22px 0 30px; color: #8a9085; font-size: 10px; }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.noscript { text-align: center; padding: 20px; }
+@media (min-width: 1200px) { main { width: 880px; margin: 0 auto; } }
+@media (max-width: 600px) {
+  .shell { width: calc(100% - 36px); }
+  .header { padding: 16px 0; gap: 10px; }
+  .brand { font-size: 16px; }
+  .brand-icon { font-size: 16px; padding: 7px 6px; margin-right: 8px; }
+  .local-note { font-size: 0; gap: 0; }
+  .status-dot { width: 7px; height: 7px; }
+  .intro { padding: 22px 0 20px; }
+  h1 { font-size: 30px; letter-spacing: -1px; }
+  .eyebrow { font-size: 9px; letter-spacing: 1.4px; }
+  .panel-heading { padding: 13px 15px 0; }
+  textarea { width: calc(100% - 22px); margin: 6px 11px; font-size: 20px; }
+  textarea::placeholder { font-size: 14px; }
+  .input-bottom { padding: 12px 15px; gap: 9px; }
+  .input-bottom > span { width: 100%; }
+  .examples { gap: 6px; }
+  .examples button { padding: 6px; font-size: 11px; }
+  .examples button span { font-size: 10px; margin-left: 3px; }
+  .results { margin-top: 28px; }
+  h2 { font-size: 12px; }
+  .section-number { margin-right: 7px; font-size: 10px; }
+  .count { font-size: 10px; padding: 5px 6px; }
+  th, td { padding: 10px 12px; }
+  .privacy { align-items: flex-start; margin: 28px 0 35px; }
+  .privacy p { line-height: 1.7; }
+  .privacy span { display: block; margin-left: 0; }
+  footer { font-size: 9px; line-height: 1.6; }
+}
